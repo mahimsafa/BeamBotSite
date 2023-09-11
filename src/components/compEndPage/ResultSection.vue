@@ -97,7 +97,7 @@ export default {
 	async mounted () {
 		// Make a bunch of promises
 		await Promise.all([
-			await axios.get(`http://100.26.160.253:3000/competition/${this.competitionId}/submissions`)
+			await axios.get(`${process.env.VUE_APP_API_HOST}/competition/${this.competitionId}/submissions`)
 				.then((res) => {
 					this.submissions = res.data
 				})

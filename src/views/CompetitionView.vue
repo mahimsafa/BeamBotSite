@@ -193,7 +193,7 @@ export default {
 	},
 	async mounted () {
 		// Comp Details
-		await axios.get(`http://100.26.160.253:3000/competition/${this.competitionId}/group/${this.groupId}`)
+		await axios.get(`${process.env.VUE_APP_API_HOST}/competition/${this.competitionId}/group/${this.groupId}`)
 			.then((res) => {
 				this.compData = res.data
 				this.groupData = res.data.group
@@ -281,7 +281,7 @@ export default {
 			}
 		},
 		async checkTelegramAuthorization (authData) {
-			await axios.post('http://100.26.160.253:3000/verify-tg/verify-user', authData)
+			await axios.post(`${process.env.VUE_APP_API_HOST}/verify-tg/verify-user`, authData)
 				.then((res) => {
 					// Save user data
 					this.saveTelegramUserData(res.data)
@@ -305,7 +305,7 @@ export default {
 			// Load your competition and group data here
 			try {
 				const response = await axios.get(
-					`http://100.26.160.253:3000/competition/${this.competitionId}/group/${this.groupId}`
+					`${process.env.VUE_APP_API_HOST}/competition/${this.competitionId}/group/${this.groupId}`
 				)
 				this.compData = response.data
 				this.groupData = response.data.group

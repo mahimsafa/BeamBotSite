@@ -71,7 +71,7 @@ export default {
 				// Unlike submission
 				// console.log('Unliking submission...')
 
-				await axios.post(`http://100.26.160.253:3000/submission/${this.submissionId}/unvote`, data)
+				await axios.post(`${process.env.VUE_APP_API_HOST}/submission/${this.submissionId}/unvote`, data)
 					.then((res) => {
 						// console.log(res)
 						this.$emit('updateVoteCount', -1) // Emit an event to decrease voteCount in parent
@@ -83,7 +83,7 @@ export default {
 				// Like submission
 				// console.log('Liking submission...')
 
-				await axios.post(`http://100.26.160.253:3000/submission/${this.submissionId}/vote`, data)
+				await axios.post(`${process.env.VUE_APP_API_HOST}/submission/${this.submissionId}/vote`, data)
 					.then((res) => {
 						// console.log(res)
 						this.$emit('updateVoteCount', 1) // Emit an event to decrease voteCount in parent
