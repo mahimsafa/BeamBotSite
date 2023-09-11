@@ -1,0 +1,19 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Quantify-Bold';
+  src: url('./font/Quantify-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Goldplay-Medium';
+  src: url('./font/Goldplay-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
